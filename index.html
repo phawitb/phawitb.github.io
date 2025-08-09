@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phawit Boonrat — Portfolio</title>
+  <style>
+    :root{
+      --bg:#fafafa; --card:#ffffff; --text:#1f2937; --muted:#6b7280; --link:#2563eb; --ring:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:var(--bg);}
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px; margin:40px auto; padding:0 16px}
+    header h1{margin:0 0 6px 0; font-size:28px}
+    header p{margin:0 0 24px 0; color:var(--muted)}
+
+    /* Card shell */
+    .card{
+      background:var(--card); border:1px solid var(--ring); border-radius:12px;
+      box-shadow:0 4px 14px rgba(0,0,0,.04);
+    }
+
+    /* Media (16:9 by default) */
+    .media{position:relative; width:100%; padding-bottom:56.25%; background:#0f172a; border-radius:10px; overflow:hidden}
+    .media iframe, .media img{position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover}
+
+    /* Profile: 1:3 image:text */
+    .profile{display:grid; grid-template-columns: 1fr 3fr; gap:18px; padding:18px}
+    /* .profile .media{padding-bottom:100%} square-ish portrait; adjust if preferred */
+    .profile .media{
+      padding-bottom: 125%; /* เดิม 100% -> 125% คือสูงกว่า กว้างนิดหน่อย */
+      max-width: 220px;     /* จำกัดความกว้างรูป */
+      margin: auto;         /* จัดรูปให้อยู่กลางคอลัมน์ */
+      margin-top: 0;        /* ชิดบน */
+    }
+    .profile h2{margin:0 0 8px 0; font-size:22px}
+    .profile .content p{margin:0 0 12px 0; line-height:1.6}
+    .profile .content ul{margin:6px 0 14px 18px}
+    .profile .content li{margin-bottom:6px}
+    .muted{color:var(--muted)}
+
+    /* Projects list */
+    .projects{display:flex; flex-direction:column; gap:16px; margin-top:28px}
+    .project{display:grid; grid-template-columns: 1fr 2fr; gap:16px; padding:16px}
+    .project h3{margin:0 0 8px 0; font-size:18px}
+    .project p{margin:0 0 12px 0; line-height:1.6}
+    .project .links{display:flex; gap:12px; flex-wrap:wrap}
+    .chip{display:inline-block; font-size:12px; padding:2px 8px; border:1px solid var(--ring); border-radius:999px; color:#374151}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .profile{grid-template-columns:1fr}
+      .project{grid-template-columns:1fr}
+      .profile .media{padding-bottom:56.25%}
+    }
+    .email-card{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.04);
+      padding: 8px;
+      margin-top: 10px;
+      text-align: center;
+      max-width: 220px; /* ให้เท่ากับ max-width ของรูปโปรไฟล์ */
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .email-card a{
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .email-card a:hover{ text-decoration: underline }
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- <h1>Phawit Boonrat</h1>
+      <p class="muted">Profile image:text = 1:3 • Projects are horizontal (media left, text right)</p> -->
+    </header>
+
+    <!-- Profile -->
+    <section class="card profile" aria-label="Profile">
+      <div>
+        <div class="media">
+          <img src="images/phawit_profile.jpg" alt="Phawit Boonrat profile image">
+        </div>
+      
+        <!-- Email Card -->
+        <div class="email-card">
+          <a href="mailto:phawit.bo@crma.ac.th">phawit.bo@crma.ac.th</a>
+        </div>
+
+      
+      </div>
+
+      <div class="content">
+        <h1>Phawit Boonrat</h1>
+
+        <p>Hi! I am passionate about robotics and autonomous systems. Ten years ago, during my bachelor's degree studies, I built a robot entirely from scratch. At that time, there weren’t as many tutorials available as there are today, so I relied heavily on official technical documentation. My passion drove me to pursue this project independently, and I successfully completed it as part of my research in Electrical Engineering for my bachelor's degree.
+
+          Following that, I pursued further studies in AI and machine learning at the master's level. I developed a strong passion for creating and improving machine learning algorithms, particularly for deployment on real edge devices and within federated learning environments. I have a keen interest in deep learning, especially reinforcement learning, and achieved an A grade in all AI and machine learning-related subjects during my master's studies.</p>
+
+        <p><strong>Interests</strong></p>
+        <ul>
+          <li>Machine Learning (ML)</li>
+          <li>Deep Learning (DL)</li>
+          <li>Large Language Models (LLMs)</li>
+          <li>Federated Learning (FL) on Real Edge Devices</li>
+          <li>Robotics and Autonomous Systems</li>
+        </ul>
+
+        <p><strong>Education</strong></p>
+        <ul>
+          <li><strong>Bachelor's degree</strong><br>- Electrical Communication Engineering, Chulachomklao Royal Military Academy</li>
+          <li><strong>Master's degree</strong><br>- Artificial Intelligence And Machine Learning, National Institute of Development Administration</li>
+        </ul>
+      </div>
+    </section>
+
+
+
+    <!-- Projects -->
+    <section class="projects" aria-label="Projects">
+
+      <!-- Edge-LLM Inference with Sharded Model -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/l2uFeBvGDug"
+            title="Edge-LLM Inference with Sharded Model"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>Edge-LLM Inference with Sharded Model</h3>
+          <p>Developed a distributed large language model (LLM) inference system by splitting the DistilGPT2 model into five sequential parts using PyTorch. Four parts were hosted on a PC (simulating edge devices) and one part ran on a real Raspberry Pi 5. Implemented socket-based tensor transfer with size headers for reliable networking between devices, enabling step-by-step collaborative text generation across heterogeneous hardware.</p>
+          <div class="links">
+            <a href="https://www.notion.so/Edge-LLM-Inference-with-sharded-model-249db3a9f6d98021bd29dce3e9c4a63b?pvs=21" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- LLM Fine-Tuning on Edge Devices with LoRA -->
+      <article class="card project">
+        <div class="media">
+          <!-- Replace with your Notion public image URL -->
+          <!-- <img src="https://via.placeholder.com/800x450?text=LoRA+Fine-Tuning" alt="LLM Fine-Tuning with LoRA"> -->
+          <img src="images/lora.webp" alt="LLM Fine-Tuning with LoRA">
+        </div>
+        <div>
+          <h3>LLM Fine-Tuning on Edge Devices with LoRA</h3>
+          <p>Implemented and compared <strong>full fine-tuning</strong> and <strong>Low-Rank Adaptation (LoRA)</strong> techniques for the DistilGPT2 model on a <strong>Raspberry Pi 5 (4 GB RAM)</strong> using a custom Wikipedia-derived Solar System corpus. Evaluated training time, parameter efficiency, and inference performance, showing LoRA reduced trainable parameters to 0.18% of the model and cut training time per epoch by more than half while maintaining competitive loss reduction. Source code and experiment details available.</p>
+          <div class="links">
+            <a href="https://www.notion.so/LLM-Finetune-LoRa-249db3a9f6d98053abe1c392a98489d1?pvs=21" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ESP32/8266 SSL -->
+      <article class="card project">
+        <div class="media">
+          <!-- Replace with your Notion public image URL -->
+          <img src="images/esp32.webp" alt="ESP32/8266 Self-Supervised Learning">
+        </div>
+        <div>
+          <h3>ESP32/8266 Self-Supervised Learning for Sensor Data Classification</h3>
+          <p>Developed a two-phase machine learning pipeline on ESP32/8266 devices using the <strong>Genann</strong> C library. Implemented a self-supervised autoencoder for feature learning from 9-axis sensor data (UCI-HAR dataset), followed by supervised fine-tuning for 7-class activity recognition. Data was read from SD cards via SPI interface. Planned extensions include federated learning over MQTT, LoRa-based communication, and deployment in an Edge–Fog–Cloud architecture.</p>
+          <div class="links">
+            <a href="https://www.notion.so/ESP32-8266-ML-SSL-24adb3a9f6d9804596f7d7d7b5ff653c?pvs=21" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FedAdaptProx -->
+      <article class="card project">
+        <div class="media">
+          <!-- Replace with your Notion public image URL -->
+          <img src="images/FedAdaptProx.webp" alt="FedAdaptProx">
+        </div>
+        <div>
+          <h3>FedAdaptProx – Federated Learning for Non-IID Graph Neural Networks</h3>
+          <p>Designed and implemented <strong>FedAdaptProx</strong>, a customized federated learning algorithm for graph neural networks (GNNs) that addresses <strong>non-IID data challenges</strong>. Built simulation environments for both <strong>static</strong> and <strong>incremental</strong> data growth using Citeseer, Cora, and Pubmed datasets. Integrated <strong>KMeans-based client clustering</strong> and <strong>accuracy-based adaptive weighting</strong> into FedProx to improve model aggregation and convergence. Compared FedAdaptProx with FedAvg, FedProx, and FedNova across multiple scenarios, demonstrating enhanced performance in non-uniform data distributions.</p>
+          <div class="links">
+            <a href="https://www.notion.so/FedAdaptProx-249db3a9f6d980e0b4e1deb3ae69debd?pvs=21" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- LLM Fine-Tuning Using Layer-Wise Sharding -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/G7sJQTidkFQ"
+            title="LLM Fine-Tuning Using Layer-Wise Sharding"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>LLM Fine-Tuning Using Layer-Wise Sharding</h3>
+          <p>Implemented a distributed fine-tuning framework for the DistilGPT2 model (~82M parameters) by splitting its six transformer layers into five sequential shards deployed across Raspberry Pi and Ubuntu-based devices. Designed a TCP-based protocol for tensor exchange and backpropagation across shards, enabling end-to-end gradient updates on all devices. The server handled embeddings, final layers, and loss computation, while each shard trained its assigned transformer blocks locally. Logged performance metrics, memory usage, and loss curves, demonstrating stable cross-device training with persistent weight saving.</p>
+          <div class="links">
+            <a href="https://www.notion.so/LLM-Fine-Tuning-Using-Layer-Wise-Sharding-249db3a9f6d980beaf2bdb197d1494c9?pvs=21" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Autonomous Mobile Robot -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/oqt_T0Da7OA"
+            title="Autonomous Mobile Robot and Intelligent Systems"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>Autonomous Mobile Robot and Intelligent Systems</h3>
+          <p>I have built a custom 2-wheels robot from scratch (using an Kinect+Arduino+Rotary Eecoders+IMU), which can navigate a predefined map autonomously, and also follow a person depending on the color of shirt he/she is wearing. For state estimation (odometry) of the robot, we used rotary encoders found on the wheels. We then integrated an IMU to get more accurate state estimation. For path planning, we used the A* algorithm to find the shortest path between the initial position and the goal. For path tracking, we used a PID controller. We mounted a Kinect camera on the robot for get enviromment data. We used Robot Operating System (ROS) for communication between all the parts of the project. This project was part of my Bachelor's degree research at Chulachomklao Royal Military Academy</p>
+        </div>
+      </article>
+
+      <!-- Rubik -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/H9LnXKCRwQs"
+            title="Rubik with custom Algorithm"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>Rubik with custom Algorithm</h3>
+          <p>I created an algorithm capable of solving the Rubik's Cube problem using IDA* and applied my custom algorithm wuth machine learning regression model.</p>
+        </div>
+      </article>
+
+      <!-- AI-powered Retail POS -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/OVC_JKqEn4w"
+            title="AI-powered Retail POS Systems for Smartstore"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>AI-powered Retail POS Systems for Smartstore</h3>
+          <p>I createed Retail POS Systems for Smartstore using Object Detection with Convolutional Neural Networks, I retrained yolov5 object detector on images of some customized Thai product in supermarket,200 items in which I manually gathered, performed image processing, and annotated. And I intergrade with my AI-powered Retail POS Systems for smartstore. This work was done as part of my Master's degree in Image Processing course at at National Institute of Development Administration.</p>
+        </div>
+      </article>
+
+      <!-- Traffic Light DRL -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Q0dV2F0qEzs"
+            title="Traffic Light Control System using Deep Reinforcement Learning"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>Traffic Light Control System using Deep Reinforcement Learning</h3>
+          <p>Trained a Traffic Light Control System how to Find the best strategy for optimising the average sum waiting time of traffic, in simulation, in an SUMO environment using a Deep Q-Network(DQN) and Double Deep Q-Network(DDQN). I Used Pytorch in Python to train the agent, and used SUMO package as a simulation environment. This work was done as part of my Master's degree research at National Institute of Development Administration.</p>
+        </div>
+      </article>
+
+      <!-- Target Tracking -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/gIvHAsaPw7I"
+            title="Target-Tracking"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>Target-Tracking</h3>
+          <p>I developed a target tracking system to track people and identify a specific target person in videos. I retrained the Object Detection and DeepSORT model for tracking people in videos and utilized image similarity techniques to identify the target person.</p>
+        </div>
+      </article>
+
+    </section>
+  </div>
+</body>
+</html>
