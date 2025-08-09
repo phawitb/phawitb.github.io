@@ -92,10 +92,29 @@
           <img src="images/phawit_profile.jpg" alt="Phawit Boonrat profile image">
         </div>
       
-        <!-- Email Card -->
+        <!-- Contact Card -->
         <div class="email-card">
-          <a href="mailto:phawit.bo@crma.ac.th">phawit.bo@crma.ac.th</a>
+          <!-- Email Icon + Link -->
+          <a href="mailto:phawit.bo@crma.ac.th" title="Email">
+            <!-- Email SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align:middle; margin-right:6px;">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217l-8 4.8-8-4.8V4z"/>
+              <path d="M0 4.697v7.104l5.803-3.481L0 4.697zM6.761 8.83l-6.761 4.06A2 2 0 0 0 2 14h12a2 2 0 0 0 1.999-1.11l-6.76-4.06L8 9.583l-1.239-.753zM10.197 8.32 16 11.801V4.697l-5.803 3.623z"/>
+            </svg>
+            phawit.bo@crma.ac.th
+          </a>
         </div>
+
+        <!-- Google Scholar Card -->
+        <!-- <div class="email-card">
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=th&user=sUwqJYMAAAAJ&citation_for_view=sUwqJYMAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener" title="Google Scholar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;">
+              <path d="M12 2L1 12h3v7h5v-5h4v5h5v-7h3L12 2zm0 4.828L16.172 11H7.828L12 6.828z"/>
+            </svg>
+            Google Scholar
+          </a>
+        </div> -->
+
 
       
       </div>
@@ -147,6 +166,20 @@
         </div>
       </article>
 
+      <!-- LoRa Technology for GHG Monitoring in Mangrove Ecosystem -->
+      <article class="card project">
+        <div class="media">
+          <img src="images/lora_iot.png" alt="LoRa Technology for GHG Monitoring in Mangrove Ecosystem">
+        </div>
+        <div>
+          <h3>LoRa Technology for GHG Monitoring in Mangrove Ecosystem</h3>
+          <p>This study proposes an Internet of Things (IoT) network specifically designed to monitor greenhouse gases (GHGs) in mangrove forests. The network employs LoRa technology to transmit environmental data from sensor nodes to the central hub. Each node is equipped with a SCD41 sensor that is able to measure carbon dioxide concentrations, temperature, heat index, and humidity.</p>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10760552" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
       <!-- LLM Fine-Tuning on Edge Devices with LoRA -->
       <article class="card project">
         <div class="media">
@@ -186,7 +219,7 @@
         </div>
         <div>
           <h3>FedAdaptProx – Federated Learning for Non-IID Graph Neural Networks</h3>
-          <p>Designed and implemented <strong>FedAdaptProx</strong>, a customized federated learning algorithm for graph neural networks (GNNs) that addresses <strong>non-IID data challenges</strong>. Built simulation environments for both <strong>static</strong> and <strong>incremental</strong> data growth using Citeseer, Cora, and Pubmed datasets. Integrated <strong>KMeans-based client clustering</strong> and <strong>accuracy-based adaptive weighting</strong> into FedProx to improve model aggregation and convergence. Compared FedAdaptProx with FedAvg, FedProx, and FedNova across multiple scenarios, demonstrating enhanced performance in non-uniform data distributions.</p>
+          <p>Designed and implemented <strong>FedAdaptProx</strong>, a customized federated learning algorithm for graph neural networks (GNNs) that addresses <strong>non-IID data challenges</strong>. Built simulation environments for both <strong>static</strong> and <strong>incremental</strong> data growth using Citeseer, Cora, and Pubmed datasets. Integrated <strong>KMeans-based client clustering</strong> and <strong>accuracy-based adaptive weighting</strong> into FedProx to improve model aggregation and convergence. Compared FedAdaptProx with FedAvg, FedProx, and FedNova across multiple scenarios.</p>
           <div class="links">
             <a href="https://www.notion.so/FedAdaptProx-249db3a9f6d980e0b4e1deb3ae69debd?pvs=21" target="_blank" rel="noopener">More details</a>
           </div>
@@ -207,6 +240,24 @@
           <p>Implemented a distributed fine-tuning framework for the DistilGPT2 model (~82M parameters) by splitting its six transformer layers into five sequential shards deployed across Raspberry Pi and Ubuntu-based devices. Designed a TCP-based protocol for tensor exchange and backpropagation across shards, enabling end-to-end gradient updates on all devices. The server handled embeddings, final layers, and loss computation, while each shard trained its assigned transformer blocks locally. Logged performance metrics, memory usage, and loss curves, demonstrating stable cross-device training with persistent weight saving.</p>
           <div class="links">
             <a href="https://www.notion.so/LLM-Fine-Tuning-Using-Layer-Wise-Sharding-249db3a9f6d980beaf2bdb197d1494c9?pvs=21" target="_blank" rel="noopener">More details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Traffic Light DRL -->
+      <article class="card project">
+        <div class="media">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Q0dV2F0qEzs"
+            title="Traffic Light Control System using Deep Reinforcement Learning"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h3>Traffic Light Control System using Deep Reinforcement Learning</h3>
+          <p>Trained a Traffic Light Control System how to Find the best strategy for optimising the average sum waiting time of traffic, in simulation, in an SUMO environment using a Deep Q-Network(DQN) and Double Deep Q-Network(DDQN). I Used Pytorch in Python to train the agent, and used SUMO package as a simulation environment. This work was done as part of my Master's degree research at National Institute of Development Administration.</p>
+          <div class="links">
+            <a href="https://docs.google.com/presentation/d/1RwyJWNWmKpoHAIRnu_B5eJE7trhxaMZcgD63T7Qtnw0/edit?usp=sharing" target="_blank" rel="noopener">More details</a>
           </div>
         </div>
       </article>
@@ -253,21 +304,6 @@
         <div>
           <h3>AI-powered Retail POS Systems for Smartstore</h3>
           <p>I createed Retail POS Systems for Smartstore using Object Detection with Convolutional Neural Networks, I retrained yolov5 object detector on images of some customized Thai product in supermarket,200 items in which I manually gathered, performed image processing, and annotated. And I intergrade with my AI-powered Retail POS Systems for smartstore. This work was done as part of my Master's degree in Image Processing course at at National Institute of Development Administration.</p>
-        </div>
-      </article>
-
-      <!-- Traffic Light DRL -->
-      <article class="card project">
-        <div class="media">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/Q0dV2F0qEzs"
-            title="Traffic Light Control System using Deep Reinforcement Learning"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            loading="lazy" allowfullscreen></iframe>
-        </div>
-        <div>
-          <h3>Traffic Light Control System using Deep Reinforcement Learning</h3>
-          <p>Trained a Traffic Light Control System how to Find the best strategy for optimising the average sum waiting time of traffic, in simulation, in an SUMO environment using a Deep Q-Network(DQN) and Double Deep Q-Network(DDQN). I Used Pytorch in Python to train the agent, and used SUMO package as a simulation environment. This work was done as part of my Master's degree research at National Institute of Development Administration.</p>
         </div>
       </article>
 
