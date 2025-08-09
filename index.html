@@ -163,7 +163,7 @@
         </div>
         <div>
           <h3>Edge-LLM Inference with Sharded Model</h3>
-          <p>Developed a distributed large language model (LLM) inference system by splitting the DistilGPT2 model into five sequential parts using PyTorch. Four parts were hosted on a PC (simulating edge devices) and one part ran on a real Raspberry Pi 5. Implemented socket-based tensor transfer with size headers for reliable networking between devices, enabling step-by-step collaborative text generation across heterogeneous hardware.</p>
+          <p>Developed a distributed large language model (LLM) inference system <span style="color:red;">by splitting the DistilGPT2 model into five sequential parts using PyTorch.</span> Four parts were hosted on a PC (simulating edge devices) and one part ran on a real Raspberry Pi 5. Implemented socket-based tensor transfer with size headers for reliable networking between devices, enabling step-by-step collaborative text generation across heterogeneous hardware.</p>
           <div class="links">
             <a href="https://www.notion.so/Edge-LLM-Inference-with-sharded-model-249db3a9f6d98021bd29dce3e9c4a63b?pvs=21" target="_blank" rel="noopener">More details</a>
           </div>
@@ -241,7 +241,16 @@
         </div>
         <div>
           <h3>LLM Fine-Tuning Using Layer-Wise Sharding</h3>
-          <p>Implemented a distributed fine-tuning framework for the DistilGPT2 model (~82M parameters) by splitting its six transformer layers into five sequential shards deployed across Raspberry Pi and Ubuntu-based devices. Designed a TCP-based protocol for tensor exchange and backpropagation across shards, enabling end-to-end gradient updates on all devices. The server handled embeddings, final layers, and loss computation, while each shard trained its assigned transformer blocks locally. Logged performance metrics, memory usage, and loss curves, demonstrating stable cross-device training with persistent weight saving.</p>
+          <!-- <p>Implemented a distributed fine-tuning framework for the DistilGPT2 model (~82M parameters) by splitting its six transformer layers into five sequential shards deployed across Raspberry Pi and Ubuntu-based devices. Designed a TCP-based protocol for tensor exchange and backpropagation across shards, enabling end-to-end gradient updates on all devices. The server handled embeddings, final layers, and loss computation, while each shard trained its assigned transformer blocks locally. Logged performance metrics, memory usage, and loss curves, demonstrating stable cross-device training with persistent weight saving.</p> -->
+          <p>
+            Implemented a distributed fine-tuning framework for the DistilGPT2 model (~82M parameters) 
+            <span style="color:red;">by splitting its six transformer layers into five sequential shards deployed across Raspberry Pi and Ubuntu-based devices</span>. 
+            Designed a TCP-based protocol for tensor exchange and backpropagation across shards, enabling end-to-end gradient updates on all devices. 
+            The server handled embeddings, final layers, and loss computation, while each shard trained its assigned transformer blocks locally. 
+            Logged performance metrics, memory usage, and loss curves, demonstrating stable cross-device training with persistent weight saving.
+          </p>
+          
+          
           <div class="links">
             <a href="https://www.notion.so/LLM-Fine-Tuning-Using-Layer-Wise-Sharding-249db3a9f6d980beaf2bdb197d1494c9?pvs=21" target="_blank" rel="noopener">More details</a>
           </div>
@@ -292,7 +301,7 @@
         </div>
         <div>
           <h3>Rubik with custom Algorithm</h3>
-          <p>I created an algorithm capable of solving the Rubik's Cube problem using IDA* and applied my custom algorithm wuth machine learning regression model.</p>
+          <p>I created an algorithm capable of solving the Rubik's Cube problem using IDA* and applied my custom algorithm with machine learning regression model.</p>
         </div>
       </article>
 
@@ -307,7 +316,7 @@
         </div>
         <div>
           <h3>AI-powered Retail POS Systems for Smartstore</h3>
-          <p>I createed Retail POS Systems for Smartstore using Object Detection with Convolutional Neural Networks, I retrained yolov5 object detector on images of some customized Thai product in supermarket,200 items in which I manually gathered, performed image processing, and annotated. And I intergrade with my AI-powered Retail POS Systems for smartstore. This work was done as part of my Master's degree in Image Processing course at at National Institute of Development Administration.</p>
+          <p>I created Retail POS Systems for Smartstore using Object Detection with Convolutional Neural Networks, I retrained yolov5 object detector on images of some customized Thai product in supermarket,200 items in which I manually gathered, performed image processing, and annotated. And I intergrade with my AI-powered Retail POS Systems for smartstore. This work was done as part of my Master's degree in Image Processing course at at National Institute of Development Administration.</p>
         </div>
       </article>
 
